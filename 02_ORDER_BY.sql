@@ -1,0 +1,77 @@
+/* ORDER BY */
+
+SELECT
+	  MENU_CODE
+	, MENU_NAME
+	, MENU_PRICE
+    FROM TBL_MENU
+	-- ORDER BY MENU_PRICE ASC; 생략가능
+ORDER BY MENU_PRICE;  
+
+SELECT
+	  MENU_CODE
+	, MENU_NAME
+	, MENU_PRICE
+    FROM TBL_MENU
+ORDER BY MENU_PRICE DESC;  
+    
+    
+SELECT
+	  MENU_CODE
+	, MENU_NAME
+	, MENU_PRICE
+   FROM TBL_MENU
+ORDER BY MENU_PRICE DESC, 
+			 MENU_NAME ASC; 
+             
+SELECT
+	  MENU_CODE
+	, MENU_PRICE
+	, MENU_CODE + MENU_PRICE
+   FROM TBL_MENU
+ORDER BY MENU_CODE + MENU_PRICE DESC;
+   
+SELECT FIELD('A', 'A', 'B', 'C');		
+SELECT FIELD('B', 'A', 'B', 'C');
+
+SELECT
+	  FIELD(ORDERRABLE_STAUS, 'N', 'Y')
+	FROM TBL_MENU; 
+
+-- 오름차순 시 NULL 처음으로    
+SELECT
+		CATEGORY_CODE
+	  , CATEGORY_NAME
+	  , REF_CATEGORY_CODE
+	FROM tbl_category
+ORDER BY ref_category_code;
+
+
+SELECT
+		CATEGORY_CODE
+	  , CATEGORY_NAME
+	  , REF_CATEGORY_CODE
+	FROM tbl_category
+ORDER BY ref_category_code IS NULL;
+
+-- 내림차순 시 NULL 마지막으로
+SELECT
+		CATEGORY_CODE
+	  , CATEGORY_NAME
+	  , REF_CATEGORY_CODE
+	FROM tbl_category
+ORDER BY ref_category_code DESC;
+
+-- 내림차순 시 NULL 처음으로
+SELECT
+		CATEGORY_CODE
+	  , CATEGORY_NAME
+	  , REF_CATEGORY_CODE
+	FROM tbl_category
+ORDER BY ref_category_code IS NULL DESC, REF_CATEGORY_CODE DESC;
+
+-- DEC 오름차순
+-- ASC 내림차순 (ORDER BY에 자동으로 들어가 있는거라고 함)
+-- 
+
+
