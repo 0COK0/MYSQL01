@@ -1,0 +1,14 @@
+/*TEST*/
+SELECT
+		MENU_CODE
+	FROM TBL_MENU;
+    
+    
+SELECT
+		MENU_CODE
+        MENU_NAME,
+        MENU_PRICE,
+        CATEGORY_CODE
+	FROM TBL_MENU;
+    
+SELECT
